@@ -1,166 +1,147 @@
 const logotext = "BRIAN";
 const meta = {
-    title: "Brian James Concillo",
-    description: "I’m Brian James Concillo computer engineer _ Full stack devloper,currently working in the Philippines",
+  title: "Brian James Concillo",
+  description:
+    "I’m Brian James Concillo computer engineer _ Full stack devloper,currently working in the Philippines",
 };
 
 const introdata = {
-    title: "I’m Brian James Concillo",
-    animated: {
-        first: "I love coding",
-        second: "I code cool websites",
-        third: "I develop mobile apps",
-    },
-    description: "Computer Engineer | Full Stack Developer | Currently working in the Philippines",
-    your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+  title: "I’m Brian James Concillo",
+  animated: {
+    first: "I love coding",
+    second: "I code cool websites",
+    third: "I develop embedded systems",
+  },
+  description:
+    "Computer Engineer | Full Stack Developer | Currently working in the Philippines",
+  your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
 };
 
 const dataabout = {
-    title: "A bit about my self",
-    aboutme: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+  title: "A bit about my self",
+  aboutme:
+    "I am a Computer Engineer and a Full Stack Developer. I have a passion for coding and I love to code cool websites. I also develop embedded systems. I am currently working in the Philippines.",
 };
-const worktimeline = [{
-        jobtitle: "Designer of week",
-        where: "YAdfi",
-        date: "2020",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "Jamalya",
-        date: "2019",
-    },
-    {
-        jobtitle: "Designer of week",
-        where: "ALquds",
-        date: "2019",
-    },
+const worktimeline = [
+  {
+    jobtitle: "Web Developer - Intern (Full Stack)",
+    where: "Prince Technologies Corporation",
+    date: "2025",
+  },
+  {
+    jobtitle: "Committee on Web Development",
+    where: "University of Science and Technology of Southern Philippines",
+    date: "2023-Present",
+  },
+  {
+    jobtitle: "Customer Service Representative",
+    where: "Concentrix Inc.",
+    date: "2021",
+  },
 ];
 
-const skills = [{
-        name: "Python",
-        value: 90,
-    },
-    {
-        name: "Djano",
-        value: 85,
-    },
-    {
-        name: "Javascript",
-        value: 80,
-    },
-    {
-        name: "React",
-        value: 60,
-    },
-    {
-        name: "Jquery",
-        value: 85,
-    },
+const skills = [
+  {
+    name: "Javascript/Typescript",
+    value: 80,
+  },
+  {
+    name: "React",
+    value: 80,
+  },
+  {
+    name: "PHP",
+    value: 60,
+  },
+  {
+    name: "Laravel",
+    value: 60,
+  },
+  {
+    name: "Python",
+    value: 60,
+  },
+  {
+    name: "Java",
+    value: 50,
+  },
+  {
+    name: "C",
+    value: 65,
+  },
+  {
+    name: "Arduino",
+    value: 60,
+  },
 ];
 
-const services = [{
-        title: "UI & UX Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Mobile Apps",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
-    {
-        title: "Wordpress Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-    },
+const services = [
+  {
+    title: "Frontend Development",
+    description: "React, HTML, CSS, Javascript, Typescript",
+  },
+  {
+    title: "Backend Development",
+    description: "Laravel, Firebase",
+  },
+  {
+    title: "Embedded Systems Development",
+    description: "Arduino, Raspberry Pi, ESP32",
+  },
 ];
 
-const dataportfolio = [{
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/800/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-
-    {
-        img: "https://picsum.photos/400/600/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/300/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/550/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
-    {
-        img: "https://picsum.photos/400/700/?grayscale",
-        description: "The wisdom of life consists in the elimination of non-essentials.",
-        link: "#",
-    },
+const dataportfolio = [
+  {
+    img: "ibrgy.png",
+    description:
+      "A computer-based software that streamlines the management of barangays, the smallest administrative divisions in the Philippines",
+    link: "https://ibrgy.netlify.app/",
+  },
+  {
+    img: "chickmeup.png",
+    description:
+      "An IoT-based project for Smart Poultry Farms with ESP32, Blynk Cloud, and Firebase",
+    link: "https://github.com/Rowboouu/Chick-Me-Up",
+  },
+  {
+    img: "ecotrail.png",
+    description:
+      "Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS",
+    link: "https://ecotrail-rowboouu.vercel.app/",
+  },
+  // {
+  //     img: "https://picsum.photos/400/600/?grayscale",
+  //     description: "The wisdom of life consists in the elimination of non-essentials.",
+  //     link: "#",
+  // },
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "brianjamesconcillo@gmail.com",
-    YOUR_FONE: "(+63) 906 634 5358",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula eu nunc et sollicitudin. Cras pulvinar, nisi at imperdiet pharetra. ",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_id",
-    YOUR_TEMPLATE_ID: "template_id",
-    YOUR_USER_ID: "user_id",
+  YOUR_EMAIL: "brianjamesconcillo@gmail.com",
+  YOUR_FONE: "(+63) 906 634 5358",
+  description:
+    "I am available for freelance work. Connect with me via email or phone.",
+  // creat an emailjs.com account
+  // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
+  YOUR_SERVICE_ID: "service_id",
+  YOUR_TEMPLATE_ID: "template_id",
+  YOUR_USER_ID: "user_id",
 };
 
 const socialprofils = {
-    github: "https://github.com/Rowboouu",
-    facebook: "https://www.facebook.com/brianjames.concillo/",
-    linkedin: "https://www.linkedin.com/in/brian-james-concillo-859542334/",
-    twitter: "https://twitter.com",
+  github: "https://github.com/Rowboouu",
+  facebook: "https://www.facebook.com/brianjames.concillo/",
+  linkedin: "https://www.linkedin.com/in/brian-james-concillo-859542334/",
 };
 export {
-    meta,
-    dataabout,
-    dataportfolio,
-    worktimeline,
-    skills,
-    services,
-    introdata,
-    contactConfig,
-    socialprofils,
-    logotext,
+  meta,
+  dataabout,
+  dataportfolio,
+  worktimeline,
+  skills,
+  services,
+  introdata,
+  contactConfig,
+  socialprofils,
+  logotext,
 };

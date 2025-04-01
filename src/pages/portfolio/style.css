@@ -22,7 +22,15 @@
 }
 
 .po_item img {
-    max-width: 100%;
+    width: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    filter: sepia(1);
+    transition: filter 0.3s ease;
+}
+
+.po_item:hover img {
+    filter: none;
 }
 
 .po_item .content {
