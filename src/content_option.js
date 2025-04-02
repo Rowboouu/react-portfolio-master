@@ -98,7 +98,7 @@ const dataportfolio = [
     link: "https://ibrgy.netlify.app/",
   },
   {
-    img: "chickmeup.png",
+    img: "chickmeup2.png",
     description:
       "An IoT-based project for Smart Poultry Farms with ESP32, Blynk Cloud, and Firebase",
     link: "https://github.com/Rowboouu/Chick-Me-Up",

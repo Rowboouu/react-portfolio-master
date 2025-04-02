@@ -25,12 +25,12 @@
   width: 100%;
   min-height: 300px;
   object-fit: cover;
-  filter: grayscale(1);
+  filter: none;
   transition: filter 0.3s ease;
 }
 
 .po_item:hover img {
-  filter: none;
+  filter: grayscale(0.5);
 }
 
 .po_item .content {
