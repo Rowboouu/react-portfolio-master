@@ -1,3 +1,5 @@
+import MyImage from "./assets/images/cpe-challenge(1).jpg";
+
 const logotext = "BRIAN";
 const meta = {
   title: "Brian James Concillo",
@@ -14,7 +16,7 @@ const introdata = {
   },
   description:
     "Computer Engineer | Full Stack Developer | Currently working in the Philippines",
-  your_img_url: "https://images.unsplash.com/photo-1514790193030-c89d266d5a9d",
+  your_img_url: MyImage,
 };
 
 const dataabout = {
