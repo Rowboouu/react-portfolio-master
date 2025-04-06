@@ -29,13 +29,13 @@ const worktimeline = [
     jobtitle: "Web Developer - Intern (Full Stack)",
     where: "Prince Technologies Corporation",
     date: "2025",
-    reference: "John Doe",
+    reference: "Engr. Kevin Pallado",
   },
   {
     jobtitle: "Committee on Web Development",
     where: "University of Science and Technology of Southern Philippines",
     date: "2023-Present",
-    reference: "John Doe",
+    reference: "Engr. Marvin Tagolimot",
   },
   {
     jobtitle: "Customer Service Representative",

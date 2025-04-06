@@ -48,7 +48,7 @@ export const About = () => {
                       <th scope="row">{data.jobtitle}</th>
                       <td>{data.where}</td>
                       <td>{data.date}</td>
-                      <td>Reference Person:{data.reference}</td>
+                      <td>Ref: {data.reference}</td>
                     </tr>
                   );
                 })}
