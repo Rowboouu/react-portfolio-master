@@ -29,51 +29,45 @@ const worktimeline = [
     jobtitle: "Web Developer - Intern (Full Stack)",
     where: "Prince Technologies Corporation",
     date: "2025",
+    reference: "John Doe",
   },
   {
     jobtitle: "Committee on Web Development",
     where: "University of Science and Technology of Southern Philippines",
     date: "2023-Present",
+    reference: "John Doe",
   },
   {
     jobtitle: "Customer Service Representative",
     where: "Concentrix Inc.",
     date: "2021",
+    reference: "John Doe",
   },
 ];
 
-const skills = [
+const achievements = [
   {
-    name: "Javascript/Typescript",
-    value: 80,
+    title: "National CpE Challenge",
+    description:
+      "C-Programming Challenge Participant (2023), 4th Placer (2024), TBD (2025)",
+    date: "2023-2025",
   },
   {
-    name: "React",
-    value: 80,
+    title: "Regional CpE Challenge",
+    description: "C-Programming Challenge Champion",
+    date: "2023-2025",
   },
   {
-    name: "PHP",
-    value: 60,
+    title: "Thailand International Mathematical Olympiad",
+    description:
+      "Bronze Medalist in the Heat Round, Did not participate in the Final Round due to COVID-19",
+    date: "2020",
   },
   {
-    name: "Laravel",
-    value: 60,
-  },
-  {
-    name: "Python",
-    value: 60,
-  },
-  {
-    name: "Java",
-    value: 50,
-  },
-  {
-    name: "C",
-    value: 65,
-  },
-  {
-    name: "Arduino",
-    value: 60,
+    title: "MTAP DepEd Math Challenge",
+    description:
+      "Consistent Top 1-2 in the Division Level, 3rd Place in the Regional Level (2019)",
+    date: "2012-2015, 2017-2019",
   },
 ];
 
@@ -140,7 +134,7 @@ export {
   dataabout,
   dataportfolio,
   worktimeline,
-  skills,
+  achievements,
   services,
   introdata,
   contactConfig,

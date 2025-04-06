@@ -6,7 +6,7 @@ import {
   dataabout,
   meta,
   worktimeline,
-  skills,
+  achievements,
   services,
 } from "../../content_option";
 
@@ -37,7 +37,7 @@ export const About = () => {
         </Row>
         <Row className=" sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Work Timline</h3>
+            <h3 className="color_sec py-4">Work Timeline</h3>
           </Col>
           <Col lg="7">
             <table className="table caption-top">
@@ -48,6 +48,7 @@ export const About = () => {
                       <th scope="row">{data.jobtitle}</th>
                       <td>{data.where}</td>
                       <td>{data.date}</td>
+                      <td>Reference Person:{data.reference}</td>
                     </tr>
                   );
                 })}
@@ -57,31 +58,37 @@ export const About = () => {
         </Row>
         <Row className="sec_sp">
           <Col lg="5">
-            <h3 className="color_sec py-4">Skills</h3>
+            <h3 className="color_sec py-4">Achievements</h3>
           </Col>
           <Col lg="7">
-            {skills.map((data, i) => {
-              return (
-                <div key={i}>
-                  <h3 className="progress-title">{data.name}</h3>
-                  <div className="progress">
-                    <div
-                      className="progress-bar"
-                      style={{
-                        width: `${data.value}%`,
-                      }}
-                    >
-                      <div className="progress-value">{data.value}%</div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            <table className="table caption-top">
+              <tbody>
+                {achievements.map((data, i) => {
+                  return (
+                    <tr key={i}>
+                      <th scope="row">{data.title}</th>
+                      <td>{data.description}</td>
+                      <td>{data.date}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            <div className="text-center mt-4">
+              <a
+                href="https://drive.google.com/drive/folders/1Ow2GoZfZs3XZcRi43j_hhoUy0KZvXamJ?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                View All Achievements
+              </a>
+            </div>
           </Col>
         </Row>
         <Row className="sec_sp">
-          <Col lang="5">
-            <h3 className="color_sec py-4">services</h3>
+          <Col lg="5">
+            <h3 className="color_sec py-4">Services</h3>
           </Col>
           <Col lg="7">
             {services.map((data, i) => {
