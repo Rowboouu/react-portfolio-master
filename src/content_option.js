@@ -24,9 +24,10 @@ const introdata = {
 };
 
 const dataabout = {
-  title: "A bit about my self",
-  aboutme:
-    "I am a Computer Engineer and a Full Stack Developer. I have a passion for coding and I love to code cool websites. I also develop embedded systems. I am currently working in the Philippines.",
+  title: "A bit about me",
+  aboutme: `I am a Computer Engineer and a Full Stack Developer. I have the passion for coding, 
+    from cool websites, to embedded systems. I am also capable of creating AI and Machine 
+    Learning related projects. I am currently residing in the Philippines.`,
 };
 const worktimeline = [
   {
