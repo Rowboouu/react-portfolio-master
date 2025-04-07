@@ -14,8 +14,8 @@ const meta = {
 const introdata = {
   title: "I’m Brian James Concillo",
   animated: {
-    first: "I love coding",
-    second: "I code cool websites",
+    first: "I do machine learning",
+    second: "I code websites",
     third: "I develop embedded systems",
   },
   description:
