@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
-import { logotext, socialprofils } from "../content_option";
+import { logo, socialprofils } from "../content_option";
 import Themetoggle from "../components/themetoggle";
 
 const Headermain = () => {
@@ -59,7 +59,7 @@ const Headermain = () => {
             className="navbar-brand nav_ac"
             onClick={() => scrollToPage("home")}
           >
-            {logotext}
+            <img src={logo.logo} className="logo"></img>
           </button>
 
           {/* Desktop Navigation */}
@@ -69,12 +69,12 @@ const Headermain = () => {
                 <button onClick={() => scrollToPage("home")}>Home</button>
               </li>
               <li className="nav__item">
+                <button onClick={() => scrollToPage("about")}>About</button>
+              </li>
+              <li className="nav__item">
                 <button onClick={() => scrollToPage("portfolio")}>
                   Portfolio
                 </button>
-              </li>
-              <li className="nav__item">
-                <button onClick={() => scrollToPage("about")}>About</button>
               </li>
               <li className="nav__item">
                 <button onClick={() => scrollToPage("contact")}>Contact</button>
@@ -110,18 +110,18 @@ const Headermain = () => {
                   </li>
                   <li className="menu_item">
                     <button
-                      onClick={() => scrollToPage("portfolio")}
-                      className="my-3"
-                    >
-                      Portfolio
-                    </button>
-                  </li>
-                  <li className="menu_item">
-                    <button
                       onClick={() => scrollToPage("about")}
                       className="my-3"
                     >
                       About
+                    </button>
+                  </li>
+                  <li className="menu_item">
+                    <button
+                      onClick={() => scrollToPage("portfolio")}
+                      className="my-3"
+                    >
+                      Portfolio
                     </button>
                   </li>
                   <li className="menu_item">

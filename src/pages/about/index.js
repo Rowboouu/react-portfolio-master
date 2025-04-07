@@ -16,7 +16,8 @@ export const About = () => {
       <Container className="About-header">
         <Helmet>
           <meta charSet="utf-8" />
-          <title> About | {meta.title}</title>
+          <link rel="icon" type="image" href={meta.logo} />
+          <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
@@ -48,7 +49,15 @@ export const About = () => {
                       <th scope="row">{data.jobtitle}</th>
                       <td>{data.where}</td>
                       <td>{data.date}</td>
-                      <td>Ref: {data.reference}</td>
+                      <td>
+                        <a
+                          href={data.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {data.reference}
+                        </a>
+                      </td>
                     </tr>
                   );
                 })}

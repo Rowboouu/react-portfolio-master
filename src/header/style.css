@@ -7,12 +7,16 @@
   width: 100%;
   padding: 0 20px;
   z-index: 1000;
-  transition: background-color 0.3s ease;
-  background-color: var(--primary-color);
+  background-color: var(--overlay-color);
 }
 
 .site__header.scrolled {
-  background-color: var(--primary-color);
+  background-color: var(--overlay-color);
+}
+
+.logo {
+  height: 40px;
+  width: 40px;
 }
 
 /* Footer Styles */
@@ -27,7 +31,7 @@
 }
 
 .site__footer.scrolled {
-  background-color: var(--primary-color);
+  background-color: var(--overlay-color);
 }
 
 /* Menu Button */

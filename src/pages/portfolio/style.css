@@ -86,3 +86,14 @@
 .po_item .content a:hover {
   text-decoration: none;
 }
+
+.modal-text {
+  font-size: 1rem;
+  color: var(--text-color);
+  text-align: left;
+  line-height: 1.8;
+}
+
+.portfolio-modal-container {
+  background-color: var(--bg-color);
+}

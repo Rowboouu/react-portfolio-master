@@ -1,7 +1,11 @@
 import MyImage from "./assets/images/cpe-challenge(1).jpg";
+import Logo from "./assets/images/adobe-portfolio-logo.png";
 
-const logotext = "BRIAN";
+const logo = {
+  logo: Logo,
+};
 const meta = {
+  logo: Logo,
   title: "Brian James Concillo",
   description:
     "I’m Brian James Concillo computer engineer _ Full stack devloper,currently working in the Philippines",
@@ -30,18 +34,21 @@ const worktimeline = [
     where: "Prince Technologies Corporation",
     date: "2025",
     reference: "Engr. Kevin Pallado",
+    link: "https://www.facebook.com/tooezzzzz",
   },
   {
     jobtitle: "Committee on Web Development",
     where: "University of Science and Technology of Southern Philippines",
     date: "2023-Present",
     reference: "Engr. Marvin Tagolimot",
+    link: "https://www.facebook.com/diffident016",
   },
   {
     jobtitle: "Customer Service Representative",
     where: "Concentrix Inc.",
     date: "2021",
-    reference: "John Doe",
+    reference: "Maria Patricia Nonoy",
+    link: "mailto:maria.nonoy@concentrix.com",
   },
 ];
 
@@ -74,35 +81,50 @@ const achievements = [
 const services = [
   {
     title: "Frontend Development",
-    description: "React, HTML, CSS, Javascript, Typescript",
+    description: "React, HTML, CSS, Javascript, Typescript, Tailwind CSS",
   },
   {
     title: "Backend Development",
-    description: "Laravel, Firebase",
+    description: "PHP, Laravel, Firebase",
   },
   {
     title: "Embedded Systems Development",
-    description: "Arduino, Raspberry Pi, ESP32",
+    description:
+      "Arduino, Raspberry Pi, Raspberry Pi Pico, ESP32, C++, MicroPython",
   },
 ];
 
 const dataportfolio = [
   {
     img: "ibrgy.png",
-    description:
-      "A computer-based software that streamlines the management of barangays, the smallest administrative divisions in the Philippines",
+    description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the 
+    management of barangays, the smallest administrative divisions in the Philippines. For now, 
+    this system automates resident information management and certificate issuance tasks. Complaint 
+    handling, financial management, legislative tracking, and inventory management will be catered 
+    soon. The system helps maintain a comprehensive resident database and generate various certificates. 
+    Soon, it will track complaints, manage finances, monitor legislative processes, and track assets. 
+    The developers aim to also provide reporting and analytics features. The goal is to improve 
+    governance and service delivery by enhancing efficiency, transparency, and accountability at 
+    the barangay level. The system was made using Firebase and React JS with Tailwind CSS`,
+    role: "Lead Full Stack Developer",
     link: "https://ibrgy.netlify.app/",
   },
   {
     img: "chickmeup2.png",
-    description:
-      "An IoT-based project for Smart Poultry Farms with ESP32, Blynk Cloud, and Firebase",
+    description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32 
+      microcontroller. It integrates real-time monitoring and automation features via the 
+      Arduino IDE, Blynk Cloud, and Firebase to enhance poultry management efficiency.
+      Features include real-time monitoring of poultry farm conditions. data logging and cloud 
+      storage using Firebase, remote control and automation through Blynk Cloud, and wireless 
+      connectivity via ESP32.`,
+    role: "Lead Embedded Systems Engineer",
     link: "https://github.com/Rowboouu/Chick-Me-Up",
   },
   {
     img: "ecotrail.png",
-    description:
-      "Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS",
+    description: `Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS and Tailwind CSS.
+      This project was a collaboration with Ms. Irish Paring, a UI/UX designer.`,
+    role: "Sole Frontend Developer",
     link: "https://ecotrail-rowboouu.vercel.app/",
   },
   // {
@@ -139,5 +161,5 @@ export {
   introdata,
   contactConfig,
   socialprofils,
-  logotext,
+  logo,
 };
