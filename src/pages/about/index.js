@@ -11,6 +11,12 @@ import {
 } from "../../content_option";
 
 export const About = () => {
+  const scrollToPage = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <HelmetProvider>
       <Container className="About-header">
@@ -84,14 +90,12 @@ export const About = () => {
               </tbody>
             </table>
             <div className="text-center mt-4">
-              <a
-                href="https://drive.google.com/drive/folders/1Ow2GoZfZs3XZcRi43j_hhoUy0KZvXamJ?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
+              <div
+                className="ac_btn btn"
+                onClick={() => scrollToPage("contact")}
               >
-                View All Achievements
-              </a>
+                Email me for proof of achievements
+              </div>
             </div>
           </Col>
         </Row>
