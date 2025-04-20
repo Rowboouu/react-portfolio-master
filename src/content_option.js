@@ -139,7 +139,7 @@ const contactConfig = {
   YOUR_EMAIL: "brianjamesconcillo@gmail.com",
   YOUR_FONE: "(+63) 906 634 5358",
   description:
-    "I am available for freelance work. Connect with me via email or phone.",
+    "I am available for freelance work. Connect with me via email, phone, or chatbot.",
   // creat an emailjs.com account
   // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
   YOUR_SERVICE_ID: "service_id",
