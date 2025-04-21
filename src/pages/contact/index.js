@@ -47,14 +47,21 @@ export const ContactUs = () => {
           <h3 className="color_sec py-4">Get in touch</h3>
           <address>
             <strong>Email:</strong>{" "}
-            <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-              {contactConfig.YOUR_EMAIL}
+            <a href={`mailto:${contactConfig.YOUR_EMAIL_1}`}>
+              {contactConfig.YOUR_EMAIL_1}
+            </a>
+            <br />
+            <a
+              href={`mailto:${contactConfig.YOUR_EMAIL_2}`}
+              style={{ paddingLeft: 50 }}
+            >
+              {contactConfig.YOUR_EMAIL_2}
             </a>
             <br />
             <br />
-            {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+            {contactConfig.hasOwnProperty("YOUR_PHONE") ? (
               <p>
-                <strong>Phone:</strong> {contactConfig.YOUR_FONE}
+                <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
               </p>
             ) : (
               ""

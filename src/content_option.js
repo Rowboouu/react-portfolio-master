@@ -81,17 +81,25 @@ const achievements = [
 
 const services = [
   {
-    title: "Frontend Development",
+    title: "Frontend Web Development",
     description: "React, HTML, CSS, Javascript, Typescript, Tailwind CSS",
   },
   {
-    title: "Backend Development",
+    title: "Backend Web Development",
     description: "PHP, Laravel, Firebase",
   },
   {
     title: "Embedded Systems Development",
     description:
       "Arduino, Raspberry Pi, Raspberry Pi Pico, ESP32, C++, MicroPython",
+  },
+  {
+    title: "Machine Learning",
+    description: "Python, Tensorflow, Keras, Scikit-learn",
+  },
+  {
+    title: "Workflow Automation",
+    description: "n8n",
   },
 ];
 
@@ -136,8 +144,9 @@ const dataportfolio = [
 ];
 
 const contactConfig = {
-  YOUR_EMAIL: "brianjamesconcillo@gmail.com",
-  YOUR_FONE: "(+63) 906 634 5358",
+  YOUR_EMAIL_1: "brianjamesconcillo@gmail.com",
+  YOUR_EMAIL_2: "concillo.brian08@gmail.com",
+  YOUR_PHONE: "(+63) 906 634 5358",
   description:
     "I am available for freelance work. Connect with me via email, phone, or chatbot.",
   // creat an emailjs.com account
