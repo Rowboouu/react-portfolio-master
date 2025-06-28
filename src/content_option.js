@@ -31,6 +31,13 @@ const dataabout = {
 };
 const worktimeline = [
   {
+    jobtitle: "Software Engineer",
+    where: "1000 Miles Limited",
+    date: "2025-Present",
+    reference: "Kristin Jariol",
+    link: "https://www.facebook.com/kjariol",
+  },
+  {
     jobtitle: "Web Developer - Intern (Full Stack)",
     where: "Prince Technologies Corporation",
     date: "2025",
@@ -40,7 +47,7 @@ const worktimeline = [
   {
     jobtitle: "Committee on Web Development",
     where: "University of Science and Technology of Southern Philippines",
-    date: "2023-Present",
+    date: "2023-2025",
     reference: "Engr. Marvin Tagolimot",
     link: "https://www.facebook.com/diffident016",
   },
@@ -57,7 +64,7 @@ const achievements = [
   {
     title: "National CpE Challenge",
     description:
-      "C-Programming Challenge Participant (2023), 4th Placer (2024), TBD (2025)",
+      "C-Programming Challenge Participant (2023), 4th Placer (2024), Participant (2025)",
     date: "2023-2025",
   },
   {
@@ -82,11 +89,12 @@ const achievements = [
 const services = [
   {
     title: "Frontend Web Development",
-    description: "React, HTML, CSS, Javascript, Typescript, Tailwind CSS",
+    description:
+      "React, HTML, CSS, Javascript, Typescript, Tailwind CSS, QWeb, Odoo Web Library (OWL)",
   },
   {
     title: "Backend Web Development",
-    description: "PHP, Laravel, Firebase",
+    description: "PHP, Laravel, Firebase, Node.js, PostgreSQL, MySQL, Python",
   },
   {
     title: "Embedded Systems Development",
@@ -98,8 +106,8 @@ const services = [
     description: "Python, Tensorflow, Keras, Scikit-learn",
   },
   {
-    title: "Workflow Automation",
-    description: "n8n",
+    title: "Workflow Automation & AI Integration",
+    description: "n8n, Make.com",
   },
 ];
 
