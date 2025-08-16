@@ -1,4 +1,4 @@
-import MyImage from "./assets/images/cpe-challenge(1).jpg";
+import MyImage from "./assets/images/toga_image.JPG";
 import Logo from "./assets/images/adobe-portfolio-logo.png";
 
 const logo = {

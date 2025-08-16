@@ -1,3 +1,5 @@
+// 1. Import 'motion' from the library
+import { motion } from "framer-motion";
 import React, { useEffect } from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
@@ -8,6 +10,7 @@ import "@n8n/chat/style.css";
 import { createChat } from "@n8n/chat";
 
 export const ContactUs = () => {
+  // This useEffect for the chat widget remains unchanged
   useEffect(() => {
     createChat({
       webhookUrl:
@@ -37,38 +40,53 @@ export const ContactUs = () => {
           <title>{meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3 pt-md-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
-        <Row className="sec_sp">
-          <h3 className="color_sec py-4">Get in touch</h3>
-          <address>
-            <strong>Email:</strong>{" "}
-            <a href={`mailto:${contactConfig.YOUR_EMAIL_1}`}>
-              {contactConfig.YOUR_EMAIL_1}
-            </a>
-            <br />
-            <a
-              href={`mailto:${contactConfig.YOUR_EMAIL_2}`}
-              style={{ paddingLeft: 50 }}
-            >
-              {contactConfig.YOUR_EMAIL_2}
-            </a>
-            <br />
-            <br />
-            {contactConfig.hasOwnProperty("YOUR_PHONE") ? (
-              <p>
-                <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
-              </p>
-            ) : (
-              ""
-            )}
-          </address>
-          <p>{contactConfig.description}</p>
-        </Row>
+        {/* 2. Wrap the header row in motion.div */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Row className="mb-5 mt-3 pt-md-3">
+            <Col lg="8">
+              <h1 className="display-4 mb-4">Contact Me</h1>
+              <hr className="t_border my-4 ml-0 text-left" />
+            </Col>
+          </Row>
+        </motion.div>
+
+        {/* 3. Wrap the content row in motion.div */}
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Row className="sec_sp">
+            <h3 className="color_sec py-4">Get in touch</h3>
+            <address>
+              <strong>Email:</strong>{" "}
+              <a href={`mailto:${contactConfig.YOUR_EMAIL_1}`}>
+                {contactConfig.YOUR_EMAIL_1}
+              </a>
+              <br />
+              <a
+                href={`mailto:${contactConfig.YOUR_EMAIL_2}`}
+                style={{ paddingLeft: 50 }}
+              >
+                {contactConfig.YOUR_EMAIL_2}
+              </a>
+              <br />
+              <br />
+              {contactConfig.hasOwnProperty("YOUR_PHONE") ? (
+                <p>
+                  <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
+                </p>
+              ) : (
+                ""
+              )}
+            </address>
+            <p>{contactConfig.description}</p>
+          </Row>
+        </motion.div>
       </Container>
     </HelmetProvider>
   );

@@ -1,5 +1,7 @@
 import React from "react";
 import "./style.css";
+// 1. Import 'motion' from the library
+import { motion } from "framer-motion";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
@@ -22,12 +24,23 @@ export const Home = () => {
           <meta name="description" content={meta.description} />
         </Helmet>
         <div className="intro_sec d-block d-lg-flex align-items-center ">
-          <img
+          {/* 2. Convert <img> to <motion.img> and add animation props */}
+          <motion.img
             className="h_bg-image order-1 order-lg-2 h-100"
             src={introdata.your_img_url}
             alt="my image"
-          ></img>
-          <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
+            initial={{ opacity: 0, x: 100 }} // Start invisible and 100px to the right
+            whileInView={{ opacity: 1, x: 0 }} // Animate to visible and original position
+            transition={{ duration: 0.8, delay: 0.2 }} // Add a slight delay
+          ></motion.img>
+
+          {/* 3. Convert the text container <div> to <motion.div> */}
+          <motion.div
+            className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center"
+            initial={{ opacity: 0, x: -100 }} // Start invisible and 100px to the left
+            whileInView={{ opacity: 1, x: 0 }} // Animate to visible and original position
+            transition={{ duration: 0.8 }}
+          >
             <div className="align-self-center ">
               <div className="intro mx-auto">
                 <h2 className="mb-1x">{introdata.title}</h2>
@@ -70,7 +83,7 @@ export const Home = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </HelmetProvider>
