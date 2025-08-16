@@ -94,7 +94,8 @@ const services = [
   },
   {
     title: "Backend Web Development",
-    description: "PHP, Laravel, Firebase, Node.js, PostgreSQL, MySQL, Python",
+    description:
+      "PHP, Laravel, Django, Python, Node.js, Firebase, PostgreSQL, MySQL, MongoDB",
   },
   {
     title: "Embedded Systems Development",
@@ -103,11 +104,11 @@ const services = [
   },
   {
     title: "Machine Learning",
-    description: "Python, Tensorflow, Keras, Scikit-learn",
+    description: "Python, Tensorflow, Keras, Scikit-learn, OpenCV, PyTorch",
   },
   {
     title: "Workflow Automation & AI Integration",
-    description: "n8n, Make.com",
+    description: "n8n, Make.com, Microsoft Azure, OpenAI, Anthropic",
   },
 ];
 

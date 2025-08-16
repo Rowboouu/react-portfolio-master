@@ -5,7 +5,7 @@
   --text-color: #fff;
   --text-color-2: #fff;
   --text-color-3: rgb(204, 0, 0);
-  --overlay-color: rgb(12 12 12 / 63%);
+  --overlay-color: rgb(12 12 12);
   --chat--color-primary: var(--primary-color);
   --chat--color-primary-shade-50: #0b0b0b;
   --chat--color-primary-shade-100: #0a0a0a;
@@ -65,7 +65,7 @@
   --text-color: #000;
   --text-color-2: #000;
   --text-color-3: rgb(204, 0, 0);
-  --overlay-color: rgb(255 255 255 / 70%);
+  --overlay-color: rgb(255 255 255);
 }
 
 html,
