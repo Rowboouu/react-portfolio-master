@@ -95,7 +95,7 @@ const services = [
   {
     title: "Backend Web Development",
     description:
-      "PHP, Laravel, Django, Python, Node.js, Firebase, PostgreSQL, MySQL, MongoDB",
+      "Supabase, Firebase, PHP, Laravel, Django, Python, Node.js, PostgreSQL, MySQL, MongoDB",
   },
   {
     title: "Embedded Systems Development",
