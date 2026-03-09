@@ -14,7 +14,7 @@ export const ContactUs = () => {
   useEffect(() => {
     createChat({
       webhookUrl:
-        "https://miles1000.app.n8n.cloud/webhook/e1b1fe08-7038-4a35-a803-4668224c2658/chat",
+        "https://n8n-rowboouu.onrender.com/webhook/e1b1fe08-7038-4a35-a803-4668224c2658/chat",
       initialMessages: [
         "Hi there! 👋",
         "Would you like to schedule a meeting with Brian?",
