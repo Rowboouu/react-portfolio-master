@@ -31,7 +31,7 @@ const dataabout = {
 };
 const worktimeline = [
   {
-    jobtitle: "Software Engineer",
+    jobtitle: "Software Developer",
     where: "1000 Miles Limited",
     date: "2025-Present",
     reference: "Kristin Jariol",

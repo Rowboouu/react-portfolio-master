@@ -118,7 +118,7 @@ export const About = () => {
                   className="ac_btn btn"
                   onClick={() => scrollToPage("contact")}
                 >
-                  Email me for proof of achievements
+                  Email me to learn more
                 </div>
               </div>
             </Col>
