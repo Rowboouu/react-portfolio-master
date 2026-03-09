@@ -68,10 +68,12 @@ export const About = () => {
                 <tbody>
                   {worktimeline.map((data, i) => (
                     <tr key={i}>
-                      <th scope="row">{data.jobtitle}</th>
-                      <td>{data.where}</td>
-                      <td>{data.date}</td>
-                      <td>
+                      <th scope="row" className="bg-transparent">
+                        {data.jobtitle}
+                      </th>
+                      <td className="bg-transparent">{data.where}</td>
+                      <td className="bg-transparent">{data.date}</td>
+                      <td className="bg-transparent">
                         <a
                           href={data.link}
                           target="_blank"
@@ -102,9 +104,11 @@ export const About = () => {
                 <tbody>
                   {achievements.map((data, i) => (
                     <tr key={i}>
-                      <th scope="row">{data.title}</th>
-                      <td>{data.description}</td>
-                      <td>{data.date}</td>
+                      <th scope="row" className="bg-transparent">
+                        {data.title}
+                      </th>
+                      <td className="bg-transparent">{data.description}</td>
+                      <td className="bg-transparent">{data.date}</td>
                     </tr>
                   ))}
                 </tbody>
