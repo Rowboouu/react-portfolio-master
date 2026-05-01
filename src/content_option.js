@@ -108,7 +108,7 @@ const services = [
   },
   {
     title: "Workflow Automation & AI Integration",
-    description: "n8n, Make.com, Microsoft Azure, OpenAI, Anthropic",
+    description: "n8n, Make.com, Microsoft Azure/Entra, OpenAI, Anthropic",
   },
 ];
 
