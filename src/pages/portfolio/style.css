@@ -97,3 +97,15 @@
 .portfolio-modal-container {
   background-color: var(--bg-color);
 }
+
+.portfolio-modal-container .modal-title {
+  color: var(--text-color);
+}
+
+.portfolio-modal-container .btn-close {
+  filter: invert(1);
+}
+
+[data-theme="light"] .portfolio-modal-container .btn-close {
+  filter: invert(0);
+}

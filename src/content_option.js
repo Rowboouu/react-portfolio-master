@@ -114,7 +114,17 @@ const services = [
 
 const dataportfolio = [
   {
+    img: "1000miles-biz.png",
+    created_uni: false,
+    description: `Official Website for 1000 Miles Limited, your one-stop solution for developing, manufacturing, and 
+    sourcing unique gift concepts from China. Founded in 2008, 1000 Miles specializes in creating retail-ready gift
+    collections, custom display solutions, and packaging for retailers and businesses worldwide.`,
+    role: "Sole Full Stack Developer",
+    link: "https://1000miles.biz/",
+  },
+  {
     img: "ibrgy.png",
+    created_uni: true,
     description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the 
     management of barangays, the smallest administrative divisions in the Philippines. For now, 
     this system automates resident information management and certificate issuance tasks. Complaint 
@@ -129,6 +139,7 @@ const dataportfolio = [
   },
   {
     img: "chickmeup2.png",
+    created_uni: true,
     description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32 
       microcontroller. It integrates real-time monitoring and automation features via the 
       Arduino IDE, Blynk Cloud, and Firebase to enhance poultry management efficiency.
@@ -140,6 +151,7 @@ const dataportfolio = [
   },
   {
     img: "ecotrail.png",
+    created_uni: true,
     description: `Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS and Tailwind CSS.
       This project was a collaboration with Ms. Irish Paring, a UI/UX designer.`,
     role: "Sole Frontend Developer",

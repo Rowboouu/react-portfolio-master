@@ -53,7 +53,12 @@ export const Portfolio = () => {
         >
           <Row className="mb-5 mt-3 pt-md-3">
             <Col lg="8">
-              <h1 className="display-4 mb-4"> Portfolio </h1>{" "}
+              <h1 className="display-4 mb-4"> Portfolio </h1>
+              <i>
+                {`due to the nature of my work, I am unable to showcase all of my projects. 
+                However, here are some of the projects that I have worked on and can share publicly. Click on each project to view more 
+                details and access the links.`}
+              </i>
               <hr className="t_border my-4 ml-0 text-left" />
             </Col>
           </Row>
@@ -93,6 +98,11 @@ export const Portfolio = () => {
         <Modal.Body className="portfolio-modal-container">
           {currentProject && (
             <>
+              {currentProject.created_uni && (
+                <p className="modal-text text-danger">
+                  <strong>*University Project*</strong>
+                </p>
+              )}
               <p className="modal-text">{currentProject.description}</p>
               <p className="modal-text">
                 Role:
