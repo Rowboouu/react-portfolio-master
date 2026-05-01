@@ -27,11 +27,11 @@ const dataabout = {
   title: "A bit about me",
   aboutme: `I am a Computer Engineer and a Full Stack Developer. I have the passion for coding, 
     from cool websites, to embedded systems. I am also capable of creating AI and Machine 
-    Learning related projects. I am currently residing in the Philippines.`,
+    Learning related projects, as well as workflow automation solutions. I am currently residing in the Philippines.`,
 };
 const worktimeline = [
   {
-    jobtitle: "Software Developer",
+    jobtitle: "Software Engineer / IT Specialist",
     where: "1000 Miles Limited",
     date: "2025-Present",
     reference: "Kristin Jariol",
