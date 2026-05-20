@@ -54,7 +54,7 @@ export const Portfolio = () => {
           <Row className="mb-5 mt-3 pt-md-3">
             <Col lg="8">
               <h1 className="display-4 mb-4"> Portfolio </h1>
-              <i>
+              <i className="text-danger">
                 {`due to the nature of my work, I am unable to showcase all of my projects. 
                 However, here are some of the projects that I have worked on and can share publicly. Click on each project to view more 
                 details and access the links.`}
