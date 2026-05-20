@@ -18,6 +18,7 @@ export const ContactUs = () => {
       initialMessages: [
         "Hi there! 👋",
         "Would you like to schedule a meeting with Brian?",
+        "/* This chatbot is currently unavailable. Please contact me via email or phone. */",
       ],
       i18n: {
         en: {
@@ -84,7 +85,10 @@ export const ContactUs = () => {
                 ""
               )}
             </address>
-            <p>{contactConfig.description}</p>
+            <p>
+              <span>{contactConfig.description} </span>
+              <span className="text-danger">{"(currently unavailable)"}</span>
+            </p>
           </Row>
         </motion.div>
       </Container>
