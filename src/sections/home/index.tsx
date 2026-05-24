@@ -34,9 +34,11 @@ export const Home = () => {
           className="h_bg-image order-1 order-lg-2 h-100"
           src={introdata.your_img_url}
           alt={introdata.title}
-          width={800}
+          width={1500}
           height={1000}
+          quality={90}
           priority
+          sizes="(max-width: 991px) 100vw, 50vw"
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

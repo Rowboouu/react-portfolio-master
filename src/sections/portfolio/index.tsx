@@ -82,9 +82,10 @@ export const Portfolio = () => {
                   <Image
                     src={`/images/${data.img}`}
                     alt={title}
-                    width={600}
-                    height={400}
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    width={900}
+                    height={600}
+                    quality={88}
+                    sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, (max-width: 1800px) 33vw, 25vw"
                   />
                   {data.created_uni && (
                     <span className="po_item__badge">University</span>

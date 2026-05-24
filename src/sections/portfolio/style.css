@@ -1,35 +1,50 @@
 .po_items_ho {
-  column-width: 18em;
-  -moz-column-width: 18em;
-  -webkit-column-width: 18em;
-  column-gap: 2rem;
-  -moz-column-gap: 2rem;
-  -webkit-column-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 600px) {
+  .po_items_ho {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .po_items_ho {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1800px) {
+  .po_items_ho {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .po_item {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  margin: 0 auto 2rem auto;
+  margin: 0;
   position: relative;
   background: var(--bg-color);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
   overflow: hidden;
-  break-inside: avoid;
 }
 
 .po_item__media {
   position: relative;
   overflow: hidden;
-  min-height: 220px;
+  aspect-ratio: 3 / 2;
   background: var(--bg-color-alt);
 }
 
 .po_item__media img {
   width: 100%;
-  min-height: 220px;
+  height: 100%;
   display: block;
   object-fit: cover;
   transition: transform 0.5s ease;
@@ -81,13 +96,13 @@
   transform: translate(-4px, -4px);
 }
 
-/* Hover overlay (still triggers on media area) */
+/* Hover overlay (covers the media area) */
 .po_item .content {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 220px;
+  aspect-ratio: 3 / 2;
   background: rgba(12, 12, 12, 0.7);
   backdrop-filter: blur(2px);
   display: flex;

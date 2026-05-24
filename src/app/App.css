@@ -68,6 +68,8 @@
   transition: all 400ms ease-out;
 }
 
+/* Container caps tuned for large screens — let content breathe instead of
+   forcing a narrow 1140px column on a 4K monitor. */
 @media (min-width: 1400px) {
   .container,
   .container-lg,
@@ -75,6 +77,17 @@
   .container-sm,
   .container-xl,
   .container-xxl {
-    max-width: 1140px;
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1480px;
   }
 }

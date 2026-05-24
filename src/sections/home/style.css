@@ -31,10 +31,16 @@ section {
 }
 
 .intro_sec {
-  height: calc(100vh - 60px);
   min-height: 700px;
   height: 100vh;
-  margin-top: -60px;
+  margin: -60px auto 0;
+  max-width: 1600px;
+}
+
+@media (min-width: 1800px) {
+  .intro_sec {
+    max-width: 1800px;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -133,8 +139,10 @@ section {
 
 .intro_sec .h_bg-image {
   object-fit: cover;
+  object-position: center;
   background-position: center;
   max-height: 700px;
+  height: 700px;
   position: relative;
 }
 
