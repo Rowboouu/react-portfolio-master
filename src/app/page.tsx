@@ -1,7 +1,7 @@
-import { Home } from "../pages/home";
-import { About } from "../pages/about";
-import { Portfolio } from "../pages/portfolio";
-import { ContactUs } from "../pages/contact";
+import { Home } from "../sections/home";
+import { About } from "../sections/about";
+import { Portfolio } from "../sections/portfolio";
+import { ContactUs } from "../sections/contact";
 import { Socialicons } from "../components/socialicons";
 
 const sections = [

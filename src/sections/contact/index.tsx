@@ -69,6 +69,7 @@ export const ContactUs = () => {
             footer: "",
             getStarted: "New Conversation",
             inputPlaceholder: "Chat here..",
+            closeButtonTooltip: "Close chat",
           },
         },
       });

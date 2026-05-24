@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import "./style.css";
 import { motion } from "framer-motion";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
@@ -78,7 +79,13 @@ export const Portfolio = () => {
                 variants={itemVariants}
               >
                 <div className="po_item__media">
-                  <img src={`/images/${data.img}`} alt={title} />
+                  <Image
+                    src={`/images/${data.img}`}
+                    alt={title}
+                    width={600}
+                    height={400}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
                   {data.created_uni && (
                     <span className="po_item__badge">University</span>
                   )}

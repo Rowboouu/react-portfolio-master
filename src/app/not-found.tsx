@@ -15,7 +15,7 @@ export default function NotFound() {
         />
         <h1 className="notfound__code">404</h1>
         <p className="notfound__msg">
-          That page doesn't exist — or hasn't been built yet.
+          That page doesn’t exist — or hasn’t been built yet.
         </p>
         <Link href="/" className="notfound__cta">
           Back to home
