@@ -9,9 +9,10 @@ A simple portfolio template for developer/designers built with React.
 ### Features
 
 - Fully Responsive
-- Multi-Page Layout
-- Contact Form With EmailJs
-- React-Bootstrap
+- Single-Page Layout with scroll navigation
+- Built with Next.js (App Router) + TypeScript
+- React-Bootstrap + Tailwind CSS
+- n8n Chat Widget
 - Edit Content From One Place
 
 ### Setup
@@ -19,19 +20,19 @@ A simple portfolio template for developer/designers built with React.
 Get the code
 
 <pre>git clone https://github.com/ubaimutl/react-portfolio.git</pre>
- 
+
 Install required dependencies
 
-<pre>yarn install</pre>
+<pre>pnpm install</pre>
 
 
-Start the server
+Run the dev server
 
-<pre>yarn start</pre>
+<pre>pnpm dev</pre>
 
 ### More
 
-Modify pages content in  `src/content_option.js`.
+Modify pages content in  `src/content_option.ts`.
 
 ### Thanks
 

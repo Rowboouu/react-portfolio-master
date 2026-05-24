@@ -1,10 +1,67 @@
-import MyImage from "./assets/images/toga_image.jpg";
-import Logo from "./assets/images/adobe-portfolio-logo.png";
+const MyImage = "/images/toga_image.jpg";
+const Logo = "/images/adobe-portfolio-logo.png";
+
+export interface Meta {
+  logo: string;
+  title: string;
+  description: string;
+}
+
+export interface WorkTimelineItem {
+  jobtitle: string;
+  where: string;
+  date: string;
+  reference: string;
+  link: string;
+}
+
+export interface Achievement {
+  title: string;
+  description: string;
+  date: string;
+}
+
+export interface Service {
+  title: string;
+  description: string;
+}
+
+export interface PortfolioItem {
+  img: string;
+  created_uni: boolean;
+  description: string;
+  role: string;
+  link: string;
+}
+
+export interface ContactConfig {
+  YOUR_EMAIL_1: string;
+  YOUR_EMAIL_2: string;
+  YOUR_PHONE?: string;
+  description: string;
+  YOUR_SERVICE_ID: string;
+  YOUR_TEMPLATE_ID: string;
+  YOUR_USER_ID: string;
+}
+
+export interface SocialProfiles {
+  github?: string;
+  facebook?: string;
+  linkedin?: string;
+  twitter?: string;
+  instagram?: string;
+  youtube?: string;
+  twitch?: string;
+  snapchat?: string;
+  tiktok?: string;
+  [key: string]: string | undefined;
+}
 
 const logo = {
   logo: Logo,
 };
-const meta = {
+
+const meta: Meta = {
   logo: Logo,
   title: "Brian James Concillo",
   description:
@@ -25,11 +82,12 @@ const introdata = {
 
 const dataabout = {
   title: "A bit about me",
-  aboutme: `I am a Computer Engineer and a Full Stack Developer. I have the passion for coding, 
-    from cool websites, to embedded systems. I am also capable of creating AI and Machine 
+  aboutme: `I am a Computer Engineer and a Full Stack Developer. I have the passion for coding,
+    from cool websites, to embedded systems. I am also capable of creating AI and Machine
     Learning related projects, as well as workflow automation solutions. I am currently residing in the Philippines.`,
 };
-const worktimeline = [
+
+const worktimeline: WorkTimelineItem[] = [
   {
     jobtitle: "Software Engineer / IT Specialist",
     where: "1000 Miles Limited",
@@ -60,7 +118,7 @@ const worktimeline = [
   },
 ];
 
-const achievements = [
+const achievements: Achievement[] = [
   {
     title: "National CpE Challenge",
     description:
@@ -86,7 +144,7 @@ const achievements = [
   },
 ];
 
-const services = [
+const services: Service[] = [
   {
     title: "Frontend Web Development",
     description:
@@ -112,11 +170,11 @@ const services = [
   },
 ];
 
-const dataportfolio = [
+const dataportfolio: PortfolioItem[] = [
   {
     img: "1000miles-biz.png",
     created_uni: false,
-    description: `Official Website for 1000 Miles Limited, your one-stop solution for developing, manufacturing, and 
+    description: `Official Website for 1000 Miles Limited, your one-stop solution for developing, manufacturing, and
     sourcing unique gift concepts from China. Founded in 2008, 1000 Miles specializes in creating retail-ready gift
     collections, custom display solutions, and packaging for retailers and businesses worldwide.`,
     role: "Sole Full Stack Developer",
@@ -125,14 +183,14 @@ const dataportfolio = [
   {
     img: "ibrgy.png",
     created_uni: true,
-    description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the 
-    management of barangays, the smallest administrative divisions in the Philippines. For now, 
-    this system automates resident information management and certificate issuance tasks. Complaint 
-    handling, financial management, legislative tracking, and inventory management will be catered 
-    soon. The system helps maintain a comprehensive resident database and generate various certificates. 
-    Soon, it will track complaints, manage finances, monitor legislative processes, and track assets. 
-    The developers aim to also provide reporting and analytics features. The goal is to improve 
-    governance and service delivery by enhancing efficiency, transparency, and accountability at 
+    description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the
+    management of barangays, the smallest administrative divisions in the Philippines. For now,
+    this system automates resident information management and certificate issuance tasks. Complaint
+    handling, financial management, legislative tracking, and inventory management will be catered
+    soon. The system helps maintain a comprehensive resident database and generate various certificates.
+    Soon, it will track complaints, manage finances, monitor legislative processes, and track assets.
+    The developers aim to also provide reporting and analytics features. The goal is to improve
+    governance and service delivery by enhancing efficiency, transparency, and accountability at
     the barangay level. The system was made using Firebase and React JS with Tailwind CSS`,
     role: "Lead Full Stack Developer",
     link: "https://ibrgy.netlify.app/",
@@ -140,11 +198,11 @@ const dataportfolio = [
   {
     img: "chickmeup2.png",
     created_uni: true,
-    description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32 
-      microcontroller. It integrates real-time monitoring and automation features via the 
+    description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32
+      microcontroller. It integrates real-time monitoring and automation features via the
       Arduino IDE, Blynk Cloud, and Firebase to enhance poultry management efficiency.
-      Features include real-time monitoring of poultry farm conditions. data logging and cloud 
-      storage using Firebase, remote control and automation through Blynk Cloud, and wireless 
+      Features include real-time monitoring of poultry farm conditions. data logging and cloud
+      storage using Firebase, remote control and automation through Blynk Cloud, and wireless
       connectivity via ESP32.`,
     role: "Lead Embedded Systems Engineer",
     link: "https://github.com/Rowboouu/Chick-Me-Up",
@@ -157,31 +215,25 @@ const dataportfolio = [
     role: "Sole Frontend Developer",
     link: "https://ecotrail-rowboouu.vercel.app/",
   },
-  // {
-  //     img: "https://picsum.photos/400/600/?grayscale",
-  //     description: "The wisdom of life consists in the elimination of non-essentials.",
-  //     link: "#",
-  // },
 ];
 
-const contactConfig = {
+const contactConfig: ContactConfig = {
   YOUR_EMAIL_1: "brianjamesconcillo@gmail.com",
   YOUR_EMAIL_2: "concillo.brian08@gmail.com",
   YOUR_PHONE: "(+63) 906 634 5358",
   description:
     "I am available for freelance work. Connect with me via email, phone, or chatbot.",
-  // creat an emailjs.com account
-  // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
   YOUR_SERVICE_ID: "service_id",
   YOUR_TEMPLATE_ID: "template_id",
   YOUR_USER_ID: "user_id",
 };
 
-const socialprofils = {
+const socialprofils: SocialProfiles = {
   github: "https://github.com/Rowboouu",
   facebook: "https://www.facebook.com/brianjames.concillo/",
   linkedin: "https://www.linkedin.com/in/brian-james-concillo-859542334/",
 };
+
 export {
   meta,
   dataabout,

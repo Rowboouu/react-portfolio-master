@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import "./style.css";
-// 1. Import 'motion' from the library
 import { motion } from "framer-motion";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
-import { dataportfolio, meta } from "../../content_option";
+import { dataportfolio } from "../../content_option";
+import type { PortfolioItem } from "../../content_option";
 
 export const Portfolio = () => {
   const [show, setShow] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
+  const [currentProject, setCurrentProject] = useState<PortfolioItem | null>(
+    null
+  );
 
-  const handleShow = (project) => {
+  const handleShow = (project: PortfolioItem) => {
     setCurrentProject(project);
     setShow(true);
   };
@@ -20,32 +23,24 @@ export const Portfolio = () => {
     setCurrentProject(null);
   };
 
-  // 2. Define animation variants for the container and items
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2, // This will delay each child's animation by 0.2s
+        staggerChildren: 0.2,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 }, // Start invisible and 50px down
-    visible: { opacity: 1, y: 0 }, // Animate to visible and original position
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
-    <HelmetProvider>
+    <>
       <Container className="About-header">
-        <Helmet>
-          <meta charSet="utf-8" />
-          <link rel="icon" type="image" href={meta.logo} />
-          <title>{meta.title}</title>{" "}
-          <meta name="description" content={meta.description} />
-        </Helmet>
-
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +50,8 @@ export const Portfolio = () => {
             <Col lg="8">
               <h1 className="display-4 mb-4"> Portfolio </h1>
               <i className="text-danger">
-                {`due to the nature of my work, I am unable to showcase all of my projects. 
-                However, here are some of the projects that I have worked on and can share publicly. Click on each project to view more 
+                {`due to the nature of my work, I am unable to showcase all of my projects.
+                However, here are some of the projects that I have worked on and can share publicly. Click on each project to view more
                 details and access the links.`}
               </i>
               <hr className="t_border my-4 ml-0 text-left" />
@@ -64,7 +59,6 @@ export const Portfolio = () => {
           </Row>
         </motion.div>
 
-        {/* 3. Apply the container variants to the parent div */}
         <motion.div
           className="mb-5 po_items_ho"
           variants={containerVariants}
@@ -72,17 +66,29 @@ export const Portfolio = () => {
           whileInView="visible"
         >
           {dataportfolio.map((data, i) => {
+            const title = data.link
+              .replace(/^https?:\/\//, "")
+              .replace(/\/$/, "")
+              .split("/")[0];
             return (
-              // 4. Apply the item variants to each child div
               <motion.div
                 key={i}
                 className="po_item"
                 onClick={() => handleShow(data)}
-                variants={itemVariants} // The magic happens here!
+                variants={itemVariants}
               >
-                <img src={require(`../../assets/images/${data.img}`)} alt="" />
+                <div className="po_item__media">
+                  <img src={`/images/${data.img}`} alt={title} />
+                  {data.created_uni && (
+                    <span className="po_item__badge">University</span>
+                  )}
+                </div>
+                <div className="po_item__meta">
+                  <div className="po_item__title">{title}</div>
+                  <div className="po_item__role">{data.role}</div>
+                </div>
                 <div className="content">
-                  <p>Click to View Details</p>
+                  <span className="content__cta">View Details</span>
                 </div>
               </motion.div>
             );
@@ -90,7 +96,6 @@ export const Portfolio = () => {
         </motion.div>
       </Container>
 
-      {/* The Modal logic remains completely untouched */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton className="portfolio-modal-container">
           <Modal.Title>Project Details</Modal.Title>
@@ -128,6 +133,6 @@ export const Portfolio = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </HelmetProvider>
+    </>
   );
 };

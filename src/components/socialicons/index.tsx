@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import "./style.css";
 import {
   FaGithub,
@@ -10,11 +11,12 @@ import {
   FaInstagram,
   FaSnapchatGhost,
   FaTiktok,
-  FaCircle
+  FaCircle,
 } from "react-icons/fa";
+import type { IconType } from "react-icons";
 import { socialprofils } from "../../content_option";
 
-const ICON_MAPPING = {
+const ICON_MAPPING: Record<string, IconType> = {
   default: FaCircle,
   facebook: FaFacebookF,
   github: FaGithub,
@@ -24,14 +26,15 @@ const ICON_MAPPING = {
   tiktok: FaTiktok,
   twitter: FaTwitter,
   twitch: FaTwitch,
-  youtube: FaYoutube
+  youtube: FaYoutube,
 };
 
-export const Socialicons = (params) => {
+export const Socialicons = () => {
   return (
     <div className="stick_follow_icon">
       <ul>
         {Object.entries(socialprofils).map(([platform, url]) => {
+          if (!url) return null;
           const IconComponent = ICON_MAPPING[platform] || ICON_MAPPING.default;
           return (
             <li key={platform}>

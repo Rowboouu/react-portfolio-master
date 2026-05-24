@@ -1,29 +1,22 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
-import { logo, socialprofils } from "../content_option";
-import Themetoggle from "../components/themetoggle";
 
 const Headermain = () => {
   const [isActive, setActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle mobile menu toggle
   const handleToggle = () => {
     setActive(!isActive);
     document.body.classList.toggle("ovhidden");
   };
 
-  // Detect scroll position for header background
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -32,16 +25,12 @@ const Headermain = () => {
     };
   }, []);
 
-  // Scroll to page section function
-  const scrollToPage = (id) => {
+  const scrollToPage = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      // Close mobile menu if open
       if (isActive) {
         handleToggle();
       }
-
-      // Scroll to the element with smooth behavior
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
@@ -51,18 +40,23 @@ const Headermain = () => {
 
   return (
     <>
-      {/* Header */}
       <header className={`site__header ${scrolled ? "scrolled" : ""}`}>
         <div className="d-flex align-items-center justify-content-between">
-          {/* Logo */}
           <button
-            className="navbar-brand nav_ac"
+            className="navbar-brand nav_ac brand__mark"
             onClick={() => scrollToPage("home")}
+            aria-label="Home"
           >
-            <img src={logo.logo} className="logo"></img>
+            <Image
+              src="/images/logo.png"
+              alt="Brian James Concillo"
+              width={42}
+              height={42}
+              className="brand__img"
+              priority
+            />
           </button>
 
-          {/* Desktop Navigation */}
           <div className="desktop__navigation">
             <ul className="nav__links">
               <li className="nav__item">
@@ -82,9 +76,7 @@ const Headermain = () => {
             </ul>
           </div>
 
-          {/* Theme Toggle and Mobile Menu Button */}
           <div className="d-flex align-items-center">
-            <Themetoggle />
             <button
               className="menu__button nav_ac mobile__only"
               onClick={handleToggle}
@@ -94,7 +86,6 @@ const Headermain = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         <div className={`site__navigation ${isActive ? "menu__opend" : ""}`}>
           <div className="bg__menu h-100">
             <div className="menu__wrapper">
@@ -139,23 +130,6 @@ const Headermain = () => {
         </div>
       </header>
 
-      {/* Border elements */}
-      <div className="br-top"></div>
-      <div className="br-right"></div>
-      <div className="br-left"></div>
-
-      {/* Footer */}
-      <footer className={`site__footer ${scrolled ? "scrolled" : ""}`}>
-        <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center w-100 p-3">
-          <div className="d-flex">
-            <a href={socialprofils.facebook}>Facebook</a>
-            <a href={socialprofils.github}>Github</a>
-          </div>
-        </div>
-      </footer>
-
-      {/* Bottom border */}
-      <div className="br-bottom"></div>
     </>
   );
 };

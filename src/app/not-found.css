@@ -1,0 +1,55 @@
+.notfound {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.notfound__inner {
+  max-width: 480px;
+}
+
+.notfound__mark {
+  display: block;
+  margin: 0 auto 24px auto;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+.notfound__code {
+  font-family: Marcellus;
+  font-size: clamp(5rem, 14vw, 9rem);
+  line-height: 1;
+  margin: 0 0 16px 0;
+  color: var(--text-color);
+  letter-spacing: 4px;
+}
+
+.notfound__msg {
+  font-size: 1rem;
+  line-height: 1.7;
+  opacity: 0.7;
+  margin: 0 0 32px 0;
+}
+
+.notfound__cta {
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--accent-color);
+  color: var(--primary-color) !important;
+  font-family: Marcellus;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid var(--accent-color);
+  transition: all 0.25s ease;
+}
+
+.notfound__cta:hover {
+  background: transparent;
+  color: var(--accent-color) !important;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px var(--accent-color-soft);
+}

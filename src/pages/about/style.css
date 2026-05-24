@@ -2,6 +2,132 @@
   padding-top: 1.2rem;
 }
 
+/* Vertical timeline */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-color) 0%,
+    var(--accent-color) 70%,
+    transparent 100%
+  );
+  opacity: 0.4;
+}
+
+.timeline__item {
+  position: relative;
+  padding-left: 36px;
+  padding-bottom: 32px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  background: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.timeline__item:hover::before {
+  background: var(--accent-color);
+  box-shadow: 0 0 0 6px var(--accent-color-soft);
+}
+
+.timeline__date {
+  font-family: Marcellus;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.timeline__title {
+  font-family: Marcellus;
+  font-size: 1.25rem;
+  margin: 0 0 4px 0;
+  color: var(--text-color);
+}
+
+.timeline__where {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.timeline__ref {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+.timeline__ref a {
+  color: var(--accent-color);
+}
+
+.timeline__ref a:hover {
+  color: var(--accent-color-hover);
+  text-decoration: underline;
+}
+
+/* Achievements + Services use the same timeline style */
+.about__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about__list-item {
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about__list-item:last-child {
+  border-bottom: none;
+}
+
+.about__list-item .title {
+  font-family: Marcellus;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+  color: var(--text-color);
+}
+
+.about__list-item .description {
+  opacity: 0.7;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.about__list-item .date {
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .sec_sp {
   margin-bottom: calc(3rem + 5.128vw);
 }
