@@ -25,15 +25,20 @@ const LightsToggle = () => {
   };
 
   return (
-    <button
-      className="nav_ac lights-toggle"
-      onClick={toggle}
-      aria-label={lightsOn ? "Turn lights off" : "Turn lights on"}
-      title={lightsOn ? "Turn lights off" : "Turn lights on"}
-      type="button"
-    >
-      {lightsOn ? <LuLightbulb /> : <LuLightbulbOff />}
-    </button>
+    <div className="lights-toggle__wrap">
+      <span className="lights-toggle__hint" aria-hidden>
+        Lights?
+      </span>
+      <button
+        className="nav_ac lights-toggle"
+        onClick={toggle}
+        aria-label={lightsOn ? "Turn lights off" : "Turn lights on"}
+        title={lightsOn ? "Turn lights off" : "Turn lights on"}
+        type="button"
+      >
+        {lightsOn ? <LuLightbulb /> : <LuLightbulbOff />}
+      </button>
+    </div>
   );
 };
 

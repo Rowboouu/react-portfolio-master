@@ -14,7 +14,7 @@
 }
 
 .site__header.scrolled {
-  border-bottom-color: rgba(165, 33, 33, 0.25);
+  border-bottom-color: rgba(200, 48, 46, 0.3);
 }
 
 /* Brand mark (logo image) */
@@ -43,7 +43,7 @@
   width: 100%;
   margin-top: 60px;
   padding: 32px 24px;
-  border-top: 1px solid rgba(165, 33, 33, 0.2);
+  border-top: 1px solid rgba(200, 48, 46, 0.25);
   background: var(--bg-color);
   z-index: 5;
 }

@@ -13,10 +13,10 @@
   --secondary-color: #d8d2c2;
   --text-color: #d8d2c2;
   --text-color-2: #d8d2c2;
-  --text-color-3: #c8302e;
-  --accent-color: #a52121;
-  --accent-color-hover: #7d1a1a;
-  --accent-color-soft: rgba(165, 33, 33, 0.15);
+  --text-color-3: #e63b39;
+  --accent-color: #c8302e;
+  --accent-color-hover: #a52121;
+  --accent-color-soft: rgba(200, 48, 46, 0.18);
   --overlay-color: rgb(8 9 12);
   --chat--color-primary: var(--primary-color);
   --chat--color-primary-shade-50: #0b0b0b;
@@ -256,7 +256,47 @@ body.lights-on .film-grain {
   display: none !important;
 }
 
-/* The toggle button itself */
+/* The toggle button + hint wrapper */
+.lights-toggle__wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lights-toggle__hint {
+  font-family: Marcellus;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  white-space: nowrap;
+  animation: lights-hint-pulse 2.6s ease-in-out infinite;
+  pointer-events: none;
+  text-shadow: 0 0 12px var(--accent-color-soft);
+}
+
+@keyframes lights-hint-pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Once lights are on, the hint is no longer needed. */
+body.lights-on .lights-toggle__hint {
+  display: none;
+}
+
+/* Tight mobile headers don't have room for the hint text. */
+@media (max-width: 600px) {
+  .lights-toggle__hint {
+    display: none;
+  }
+}
+
 .lights-toggle {
   display: inline-flex !important;
   align-items: center;

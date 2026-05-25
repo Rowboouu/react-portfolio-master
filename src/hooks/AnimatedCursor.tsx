@@ -27,6 +27,8 @@ const Spotlight = ({
   color = "245, 240, 225",
   trailingSpeed = 12,
 }: SpotlightProps) => {
+  // Note: spotlight color stays warm white (flashlight beam color),
+  // intentionally separate from the red --accent-color.
   const trackerRef = useRef<HTMLDivElement>(null);
   const maskRef = useRef<HTMLDivElement>(null);
   const target = useRef({ x: 0, y: 0 });
