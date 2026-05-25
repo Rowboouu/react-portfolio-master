@@ -28,6 +28,7 @@ const Spotlight = ({
   trailingSpeed = 12,
 }: SpotlightProps) => {
   const trackerRef = useRef<HTMLDivElement>(null);
+  const maskRef = useRef<HTMLDivElement>(null);
   const target = useRef({ x: 0, y: 0 });
   const current = useRef({ x: 0, y: 0 });
   const raf = useRef<number>();
@@ -37,6 +38,12 @@ const Spotlight = ({
     const onMove = (e: MouseEvent) => {
       target.current.x = e.clientX;
       target.current.y = e.clientY;
+      // Mask follows snappily (no smoothing) so the "lit area" is exactly
+      // where the cursor is. The glow keeps its smoothed trail.
+      if (maskRef.current) {
+        maskRef.current.style.setProperty("--mouse-x", `${e.clientX}px`);
+        maskRef.current.style.setProperty("--mouse-y", `${e.clientY}px`);
+      }
       if (!active) setActive(true);
     };
     const onLeave = () => setActive(false);
@@ -69,34 +76,46 @@ const Spotlight = ({
   }, [trailingSpeed, size, active]);
 
   return (
-    <div
-      ref={trackerRef}
-      aria-hidden
-      className="spotlight"
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: size,
-        height: size,
-        pointerEvents: "none",
-        zIndex: 9999,
-        opacity: active ? 1 : 0,
-        transition: "opacity 0.3s ease",
-        willChange: "transform",
-      }}
-    >
+    <>
+      {/* Darkness mask — dims the whole page EXCEPT the area around the
+          cursor. This is what makes the spotlight feel like a real
+          flashlight: you can only clearly see what you're pointing at. */}
       <div
-        className="spotlight__inner"
-        style={{
-          width: "100%",
-          height: "100%",
-          background: `radial-gradient(circle, rgba(${color}, 0.22) 0%, rgba(${color}, 0.1) 30%, transparent 65%)`,
-          mixBlendMode: "screen",
-          willChange: "transform, opacity",
-        }}
+        ref={maskRef}
+        aria-hidden
+        className="flashlight-mask"
+        data-active={active ? "true" : "false"}
       />
-    </div>
+      {/* The actual glow (warm white, smoothed, breathing, flickering). */}
+      <div
+        ref={trackerRef}
+        aria-hidden
+        className="spotlight"
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: size,
+          height: size,
+          pointerEvents: "none",
+          zIndex: 9999,
+          opacity: active ? 1 : 0,
+          transition: "opacity 0.3s ease",
+          willChange: "transform",
+        }}
+      >
+        <div
+          className="spotlight__inner"
+          style={{
+            width: "100%",
+            height: "100%",
+            background: `radial-gradient(circle, rgba(${color}, 0.28) 0%, rgba(${color}, 0.14) 30%, transparent 65%)`,
+            mixBlendMode: "screen",
+            willChange: "transform, opacity",
+          }}
+        />
+      </div>
+    </>
   );
 };
 

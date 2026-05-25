@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import "./style.css";
 import { VscGrabber, VscClose } from "react-icons/vsc";
+import LightsToggle from "../components/lightstoggle";
 
 const Headermain = () => {
   const [isActive, setActive] = useState(false);
@@ -50,8 +51,8 @@ const Headermain = () => {
             <Image
               src="/images/logo.png"
               alt="Brian James Concillo"
-              width={42}
-              height={42}
+              width={320}
+              height={175}
               className="brand__img"
               priority
             />
@@ -67,7 +68,7 @@ const Headermain = () => {
               </li>
               <li className="nav__item">
                 <button onClick={() => scrollToPage("portfolio")}>
-                  Portfolio
+                  Projects
                 </button>
               </li>
               <li className="nav__item">
@@ -77,6 +78,7 @@ const Headermain = () => {
           </div>
 
           <div className="d-flex align-items-center">
+            <LightsToggle />
             <button
               className="menu__button nav_ac mobile__only"
               onClick={handleToggle}
@@ -112,7 +114,7 @@ const Headermain = () => {
                       onClick={() => scrollToPage("portfolio")}
                       className="my-3"
                     >
-                      Portfolio
+                      Projects
                     </button>
                   </li>
                   <li className="menu_item">

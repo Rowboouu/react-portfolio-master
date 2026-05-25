@@ -58,14 +58,53 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  background: var(--accent-color);
-  color: var(--primary-color);
   font-family: Marcellus;
   font-size: 0.7rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 4px 10px;
   z-index: 2;
+  border: 1px solid transparent;
+}
+
+.po_item__badge--university {
+  background: var(--accent-color);
+  color: var(--text-color);
+  border-color: var(--accent-color);
+}
+
+.po_item__badge--work {
+  background: rgba(216, 210, 194, 0.92);
+  color: #0c0c0c;
+  border-color: rgba(216, 210, 194, 0.92);
+}
+
+.po_item__badge--hobby {
+  background: transparent;
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+/* Modal type-label colors */
+.modal-text--type {
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px !important;
+  opacity: 0.9;
+}
+
+.modal-text--university {
+  color: var(--accent-color);
+}
+
+.modal-text--work {
+  color: var(--text-color);
+}
+
+.modal-text--hobby {
+  color: var(--text-color);
+  font-style: italic;
 }
 
 .po_item__meta {

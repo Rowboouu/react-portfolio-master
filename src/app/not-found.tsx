@@ -9,8 +9,8 @@ export default function NotFound() {
         <Image
           src="/images/logo.png"
           alt="Brian James Concillo"
-          width={72}
-          height={72}
+          width={320}
+          height={175}
           className="notfound__mark"
         />
         <h1 className="notfound__code">404</h1>

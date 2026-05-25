@@ -75,7 +75,7 @@ export const Home = () => {
                   className="ac_btn btn text_2"
                   onClick={() => scrollToPage("portfolio")}
                 >
-                  My Portfolio
+                  My Projects
                   <div className="ring one"></div>
                   <div className="ring two"></div>
                   <div className="ring three"></div>

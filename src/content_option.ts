@@ -26,9 +26,11 @@ export interface Service {
   description: string;
 }
 
+export type ProjectType = "university" | "work" | "hobby";
+
 export interface PortfolioItem {
   img: string;
-  created_uni: boolean;
+  type: ProjectType;
   description: string;
   role: string;
   link: string;
@@ -173,7 +175,7 @@ const services: Service[] = [
 const dataportfolio: PortfolioItem[] = [
   {
     img: "1000miles-biz.png",
-    created_uni: false,
+    type: "work",
     description: `Official Website for 1000 Miles Limited, your one-stop solution for developing, manufacturing, and
     sourcing unique gift concepts from China. Founded in 2008, 1000 Miles specializes in creating retail-ready gift
     collections, custom display solutions, and packaging for retailers and businesses worldwide.`,
@@ -181,8 +183,23 @@ const dataportfolio: PortfolioItem[] = [
     link: "https://1000miles.biz/",
   },
   {
+    img: "67hub-preview.png",
+    type: "work",
+    description: `67 Hub is a workflow & operations dashboard built for a multi-department company (Accounting, HR, Admin,
+    Amazon, OEM, IT, Brand Sales). Each department gets its own workspace for business-process templates with steps and
+    SOPs, workflow runs with assignees and statuses, saved Claude.ai skill documents, and a launcher grid for internal
+    tools. Cross-department views surface every workflow in flight, the org chart, and admin configuration panels.
+    The stack is Next.js 16 App Router with React 19 and TypeScript 5, Tailwind v4, Supabase as the data layer,
+    TipTap for rich-text workflow descriptions, and dnd-kit for drag-and-drop step editing. The production build
+    integrates with Microsoft Entra ID for auth, Microsoft Graph for users/files, and Odoo for ERP flows, and exposes
+    a ~3,260-line MCP server with ~50 tools so Claude.ai can author and execute workflows directly. This public
+    portfolio fork stubs the auth and integrations so the UI can be explored without the corporate dependencies.`,
+    role: "Sole Full Stack Developer",
+    link: "https://67hub.vercel.app",
+  },
+  {
     img: "ibrgy.png",
-    created_uni: true,
+    type: "university",
     description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the
     management of barangays, the smallest administrative divisions in the Philippines. For now,
     this system automates resident information management and certificate issuance tasks. Complaint
@@ -197,7 +214,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "chickmeup2.png",
-    created_uni: true,
+    type: "university",
     description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32
       microcontroller. It integrates real-time monitoring and automation features via the
       Arduino IDE, Blynk Cloud, and Firebase to enhance poultry management efficiency.
@@ -209,7 +226,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "ecotrail.png",
-    created_uni: true,
+    type: "university",
     description: `Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS and Tailwind CSS.
       This project was a collaboration with Ms. Irish Paring, a UI/UX designer.`,
     role: "Sole Frontend Developer",

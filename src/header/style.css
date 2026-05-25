@@ -19,15 +19,15 @@
 
 /* Brand mark (logo image) */
 .brand__mark {
-  padding: 4px 8px !important;
+  padding: 8px 14px !important;
   display: inline-flex;
   align-items: center;
 }
 
 .brand__img {
   display: block;
-  width: 42px;
-  height: 42px;
+  width: auto;
+  height: 30px;
   object-fit: contain;
   transition: transform 0.25s ease, filter 0.25s ease;
 }

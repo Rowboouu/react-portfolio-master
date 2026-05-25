@@ -196,8 +196,9 @@ body::-webkit-scrollbar {
   100% { transform: translate(0, 0); }
 }
 
-/* Viewport vignette — soft darkening at edges, like a candle-lit room
-   or old camera lens. Center stays full brightness. */
+/* Viewport vignette — base atmospheric darkening at the very corners
+   (always on, even for touch/reduced-motion users). The flashlight mask
+   handles the heavy dimming when the cursor is active. */
 .vignette {
   position: fixed;
   inset: 0;
@@ -205,10 +206,79 @@ body::-webkit-scrollbar {
   z-index: 9996;
   background: radial-gradient(
     ellipse at center,
-    transparent 35%,
-    rgba(0, 0, 0, 0.45) 85%,
+    transparent 55%,
+    rgba(0, 0, 0, 0.3) 95%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+/* Flashlight darkness mask — dims the entire page except a circular
+   region around the cursor. The radial gradient is positioned by CSS
+   custom properties (--mouse-x / --mouse-y) updated from JS on every
+   mousemove. With the spotlight glow overlaid on top, this creates a
+   genuine "lit area vs unlit area" contrast. */
+.flashlight-mask {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  background: radial-gradient(
+    circle 460px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    transparent 0%,
+    transparent 28%,
+    rgba(0, 0, 0, 0.55) 88%,
     rgba(0, 0, 0, 0.7) 100%
   );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.flashlight-mask[data-active="true"] {
+  opacity: 1;
+}
+
+/* === Lights-on mode: user has switched the room lights on. Atmospheric
+   darkness layers are hidden, and the page bg lifts to a charcoal grey
+   so the room actually feels illuminated (not just "missing vignette"). === */
+body.lights-on {
+  --bg-color: #0e0f12;
+  --bg-color-alt: #15161a;
+  --text-color: #e0d9c7;
+  --secondary-color: #e0d9c7;
+  --primary-color: #0e0f12;
+  background-color: var(--bg-color);
+}
+
+body.lights-on .vignette,
+body.lights-on .flashlight-mask,
+body.lights-on .spotlight,
+body.lights-on .film-grain {
+  display: none !important;
+}
+
+/* The toggle button itself */
+.lights-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+  opacity: 0.7;
+  transition: opacity 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  font-size: 1.3rem;
+}
+
+.lights-toggle:hover {
+  opacity: 1;
+  color: var(--accent-color);
+  transform: scale(1.08);
+}
+
+body.lights-on .lights-toggle {
+  color: var(--accent-color);
+  opacity: 1;
 }
 
 /* Spotlight breathing — combines scale + opacity (breath) with

@@ -11,7 +11,7 @@ import type { PortfolioItem } from "../../content_option";
 export const Portfolio = () => {
   const [show, setShow] = useState(false);
   const [currentProject, setCurrentProject] = useState<PortfolioItem | null>(
-    null
+    null,
   );
 
   const handleShow = (project: PortfolioItem) => {
@@ -49,12 +49,7 @@ export const Portfolio = () => {
         >
           <Row className="mb-5 mt-3 pt-md-3">
             <Col lg="8">
-              <h1 className="display-4 mb-4"> Portfolio </h1>
-              <i className="text-danger">
-                {`due to the nature of my work, I am unable to showcase all of my projects.
-                However, here are some of the projects that I have worked on and can share publicly. Click on each project to view more
-                details and access the links.`}
-              </i>
+              <h1 className="display-4 mb-4"> Projects </h1>
               <hr className="t_border my-4 ml-0 text-left" />
             </Col>
           </Row>
@@ -87,9 +82,11 @@ export const Portfolio = () => {
                     quality={88}
                     sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, (max-width: 1800px) 33vw, 25vw"
                   />
-                  {data.created_uni && (
-                    <span className="po_item__badge">University</span>
-                  )}
+                  <span
+                    className={`po_item__badge po_item__badge--${data.type}`}
+                  >
+                    {data.type}
+                  </span>
                 </div>
                 <div className="po_item__meta">
                   <div className="po_item__title">{title}</div>
@@ -111,11 +108,16 @@ export const Portfolio = () => {
         <Modal.Body className="portfolio-modal-container">
           {currentProject && (
             <>
-              {currentProject.created_uni && (
-                <p className="modal-text text-danger">
-                  <strong>*University Project*</strong>
-                </p>
-              )}
+              <p
+                className={`modal-text modal-text--type modal-text--${currentProject.type}`}
+              >
+                <strong>
+                  {currentProject.type === "university" &&
+                    "*University Project*"}
+                  {currentProject.type === "work" && "*Work Project*"}
+                  {currentProject.type === "hobby" && "*Hobby Project*"}
+                </strong>
+              </p>
               <p className="modal-text">{currentProject.description}</p>
               <p className="modal-text">
                 Role:

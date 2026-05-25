@@ -14,8 +14,8 @@
 .notfound__mark {
   display: block;
   margin: 0 auto 24px auto;
-  width: 72px;
-  height: 72px;
+  width: auto;
+  height: 56px;
   object-fit: contain;
 }
 
