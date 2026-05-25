@@ -72,11 +72,13 @@ const meta: Meta = {
 
 const introdata = {
   title: "I’m Brian James Concillo",
-  animated: {
-    first: "I do machine learning",
-    second: "I code websites",
-    third: "I develop embedded systems",
-  },
+  animated: [
+    "I do machine learning",
+    "I code websites",
+    "I develop embedded systems",
+    "I build automation workflows",
+    "I create AI solutions",
+  ],
   description:
     "Computer Engineer | Full Stack Developer | Currently working in the Philippines",
   your_img_url: MyImage,

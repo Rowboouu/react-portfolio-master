@@ -57,11 +57,7 @@ export const Home = () => {
               <h2 className="hero__role">
                 <Typewriter
                   options={{
-                    strings: [
-                      introdata.animated.first,
-                      introdata.animated.second,
-                      introdata.animated.third,
-                    ],
+                    strings: introdata.animated,
                     autoStart: true,
                     loop: true,
                     deleteSpeed: 10,
