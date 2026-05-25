@@ -24,7 +24,7 @@ function prefersReducedMotion() {
 
 const Spotlight = ({
   size = 360,
-  color = "245, 158, 11",
+  color = "245, 240, 225",
   trailingSpeed = 12,
 }: SpotlightProps) => {
   const trackerRef = useRef<HTMLDivElement>(null);

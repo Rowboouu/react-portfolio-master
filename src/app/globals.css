@@ -3,17 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #0c0c0c;
-  --bg-color-alt: #131313;
-  --primary-color: #0d0d0d;
-  --secondary-color: #fff;
-  --text-color: #fff;
-  --text-color-2: #fff;
-  --text-color-3: rgb(204, 0, 0);
-  --accent-color: #f59e0b;
-  --accent-color-hover: #d97706;
-  --accent-color-soft: rgba(245, 158, 11, 0.15);
-  --overlay-color: rgb(12 12 12);
+  /* Horror palette: a flashlight in a dim room.
+     Background is a near-black with a slight cool-blue cast (nighttime,
+     not just absence of light). Text is bone/parchment instead of pure
+     white. Accent is a deep blood red for danger / UI emphasis. */
+  --bg-color: #08090c;
+  --bg-color-alt: #0d0e12;
+  --primary-color: #08090c;
+  --secondary-color: #d8d2c2;
+  --text-color: #d8d2c2;
+  --text-color-2: #d8d2c2;
+  --text-color-3: #c8302e;
+  --accent-color: #a52121;
+  --accent-color-hover: #7d1a1a;
+  --accent-color-soft: rgba(165, 33, 33, 0.15);
+  --overlay-color: rgb(8 9 12);
   --chat--color-primary: var(--primary-color);
   --chat--color-primary-shade-50: #0b0b0b;
   --chat--color-primary-shade-100: #0a0a0a;
@@ -170,13 +174,62 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+/* === Atmospheric overlays (horror / "found-footage" feel) === */
+
+/* Film grain — subtle, animated for a filmic, organic noise. */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  opacity: 0.08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.7 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: film-grain-shift 0.8s steps(4) infinite;
+}
+
+@keyframes film-grain-shift {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-10px, 5px); }
+  50%  { transform: translate(8px, -8px); }
+  75%  { transform: translate(-6px, -3px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Viewport vignette — soft darkening at edges, like a candle-lit room
+   or old camera lens. Center stays full brightness. */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9996;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 35%,
+    rgba(0, 0, 0, 0.45) 85%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
 /* Spotlight breathing — combines scale + opacity (breath) with
    translate offsets (FPS-style idle bob, like someone holding a flashlight).
    The position tracking lives on the outer .spotlight wrapper so these
-   inner transforms add on top of cursor following without fighting it. */
+   inner transforms add on top of cursor following without fighting it.
+   Also: an occasional flicker layered on top (battery-dying vibe). */
 .spotlight__inner {
-  animation: spotlight__breathe 6.5s ease-in-out infinite;
+  animation:
+    spotlight__breathe 6.5s ease-in-out infinite,
+    spotlight__flicker 9.3s steps(1) infinite;
   transform-origin: center;
+}
+
+@keyframes spotlight__flicker {
+  0%, 31%, 33%, 50%, 52%, 54%, 78%, 79%, 100% {
+    filter: brightness(1);
+  }
+  32%, 51%, 53%, 78.5% {
+    filter: brightness(0.45);
+  }
 }
 
 @keyframes spotlight__breathe {

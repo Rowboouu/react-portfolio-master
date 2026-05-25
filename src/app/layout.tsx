@@ -67,6 +67,8 @@ export default function RootLayout({
       </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div className="vignette" aria-hidden />
+        <div className="film-grain" aria-hidden />
         <AnimatedCursor />
         <Headermain />
         {children}

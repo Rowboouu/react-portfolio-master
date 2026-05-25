@@ -179,7 +179,7 @@ section {
   display: none;
 }
 
-/* Primary CTA (Portfolio): starts filled amber, hover inverts to outline */
+/* Primary CTA (Portfolio): starts filled red, hover inverts to outline */
 #button_p {
   background: var(--accent-color);
   color: var(--primary-color);
@@ -191,7 +191,7 @@ section {
   color: var(--accent-color);
 }
 
-/* Secondary CTA (Contact): starts outline, hover fills amber */
+/* Secondary CTA (Contact): starts outline, hover fills red */
 #button_h {
   background: transparent;
   color: var(--secondary-color);
