@@ -196,8 +196,24 @@ const dataportfolio: PortfolioItem[] = [
     integrates with Microsoft Entra ID for auth, Microsoft Graph for users/files, and Odoo for ERP flows, and exposes
     a ~3,260-line MCP server with ~50 tools so Claude.ai can author and execute workflows directly. This public
     portfolio fork stubs the auth and integrations so the UI can be explored without the corporate dependencies.`,
-    role: "Sole Full Stack Developer",
+    role: "Full Stack Developer",
     link: "https://67hub.vercel.app",
+  },
+  {
+    img: "packing-instruction-preview.png",
+    type: "work",
+    description: `Packing Instructions is an internal tool for managing product packaging specs, image sets,
+    and PDF/Excel exports. Each sales order surfaces its assortments in a table or grid view; clicking an
+    assortment opens an editor where images can be dropped into category slots (item pack, barcode, display,
+    inner carton, master carton, shipping marks), reordered, and exported as a printable packing instruction
+    PDF — or zipped for the whole sales order. The stack is React 19 + Vite 7 + TypeScript 5, Tailwind v4
+    with Radix UI primitives, TanStack Query 5 + Zustand for state, React Hook Form + Zod for forms,
+    and jsPDF + html2canvas + JSZip (lazy-loaded) for document generation. The production app bridges an
+    Odoo ERP webhook through a NestJS + MongoDB + Supabase backend; this public portfolio fork swaps that
+    out for an axios-mock layer with IndexedDB persistence so the full UI works in-browser with no backend.
+    Bilingual (English + 中文) via i18next.`,
+    role: "Sole Full Stack Developer",
+    link: "https://packing-instruction.vercel.app",
   },
   {
     img: "ibrgy.png",
