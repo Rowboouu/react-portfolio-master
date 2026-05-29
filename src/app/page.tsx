@@ -3,6 +3,7 @@ import { About } from "../sections/about";
 import { Portfolio } from "../sections/portfolio";
 import { ContactUs } from "../sections/contact";
 import { Socialicons } from "../components/socialicons";
+import IntroOverlay from "../components/intro-overlay";
 
 const sections = [
   { id: "home", component: <Home /> },
@@ -14,6 +15,7 @@ const sections = [
 export default function Page() {
   return (
     <div className="s_c">
+      <IntroOverlay />
       <div className="pages-container">
         {sections.map((section) => (
           <div key={section.id} id={section.id} className="page">
