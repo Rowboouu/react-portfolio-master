@@ -30,6 +30,7 @@ export type ProjectType = "university" | "work" | "hobby";
 
 export interface PortfolioItem {
   img: string;
+  title: string;
   type: ProjectType;
   description: string;
   role: string;
@@ -93,7 +94,7 @@ const dataabout = {
 
 const worktimeline: WorkTimelineItem[] = [
   {
-    jobtitle: "Software Engineer / IT Specialist",
+    jobtitle: "Software Developer",
     where: "1000 Miles Limited",
     date: "2025-Present",
     reference: "Kristin Jariol",
@@ -177,6 +178,7 @@ const services: Service[] = [
 const dataportfolio: PortfolioItem[] = [
   {
     img: "1000miles-biz.png",
+    title: "1000 Miles",
     type: "work",
     description: `Official Website for 1000 Miles Limited, your one-stop solution for developing, manufacturing, and
     sourcing unique gift concepts from China. Founded in 2008, 1000 Miles specializes in creating retail-ready gift
@@ -186,6 +188,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "67hub-preview.png",
+    title: "67 Hub",
     type: "work",
     description: `67 Hub is a workflow & operations dashboard built for a multi-department company (Accounting, HR, Admin,
     Amazon, OEM, IT, Brand Sales). Each department gets its own workspace for business-process templates with steps and
@@ -201,6 +204,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "packing-instruction-preview.png",
+    title: "Packing Instructions",
     type: "work",
     description: `Packing Instructions is an internal tool for managing product packaging specs, image sets,
     and PDF/Excel exports. Each sales order surfaces its assortments in a table or grid view; clicking an
@@ -217,6 +221,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "ibrgy.png",
+    title: "iBRGY",
     type: "university",
     description: `iBRGY is a Barangay Management System, a computer-based software that streamlines the
     management of barangays, the smallest administrative divisions in the Philippines. For now,
@@ -232,6 +237,7 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "chickmeup2.png",
+    title: "Chick-Me-Up",
     type: "university",
     description: `Chick-Me-Up is an IoT-based project designed for smart poultry farming using the ESP32
       microcontroller. It integrates real-time monitoring and automation features via the
@@ -244,11 +250,28 @@ const dataportfolio: PortfolioItem[] = [
   },
   {
     img: "ecotrail.png",
+    title: "EcoTrail",
     type: "university",
     description: `Sample Layout for EcoTrail: An Eco-Friendly Tourist Attraction Booking System with React JS and Tailwind CSS.
       This project was a collaboration with Ms. Irish Paring, a UI/UX designer.`,
     role: "Sole Frontend Developer",
     link: "https://ecotrail-rowboouu.vercel.app/",
+  },
+  {
+    img: "chess-gauntlet-preview.png",
+    title: "Chess Gauntlet",
+    type: "hobby",
+    description: `Rowboouu's Chess Gauntlet is a chess web app where you climb a ladder of progressively
+      stronger bots — 10 fixed-strength rungs from 500 to 2400 Elo, beating one to unlock the next — earn a
+      standard Elo rating, and compete on a global leaderboard. It also offers a Free Play mode to pick any rung
+      as a one-off rated game, and saved games so you can leave mid-match and resume the exact position later.
+      Elo is computed server-side so the leaderboard can't be faked: clients can't write rating columns directly
+      (RLS and a trigger guard them), and the only path that changes Elo is a service-role-only RPC that runs
+      after the server re-derives the game result from the PGN. The stack is Next.js (App Router) with Tailwind CSS,
+      Supabase (Postgres + Auth) as the data layer, chess.js and react-chessboard for the board, and Stockfish
+      compiled to WASM running in a Web Worker as the opponent engine.`,
+    role: "Sole Full Stack Developer",
+    link: "https://chess-gauntlet.vercel.app/",
   },
 ];
 

@@ -62,10 +62,6 @@ export const Portfolio = () => {
           whileInView="visible"
         >
           {dataportfolio.map((data, i) => {
-            const title = data.link
-              .replace(/^https?:\/\//, "")
-              .replace(/\/$/, "")
-              .split("/")[0];
             return (
               <motion.div
                 key={i}
@@ -76,7 +72,7 @@ export const Portfolio = () => {
                 <div className="po_item__media">
                   <Image
                     src={`/images/${data.img}`}
-                    alt={title}
+                    alt={data.title}
                     width={900}
                     height={600}
                     quality={88}
@@ -89,7 +85,7 @@ export const Portfolio = () => {
                   </span>
                 </div>
                 <div className="po_item__meta">
-                  <div className="po_item__title">{title}</div>
+                  <div className="po_item__title">{data.title}</div>
                   <div className="po_item__role">{data.role}</div>
                 </div>
                 <div className="content">
