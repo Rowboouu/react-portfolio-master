@@ -174,8 +174,103 @@
   line-height: 1.8;
 }
 
+/* Project detail bullets. Bootstrap's reset plus the global `ul` list-style
+   override both flatten lists, so the marker is drawn manually. */
+.modal-highlights {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  text-align: left;
+}
+
+.modal-highlights li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.92;
+}
+
+.modal-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.68em;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+}
+
+.modal-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+/* Callout for work projects whose public link is a sanitized fork — the
+   professional provenance is a selling point, so it gets its own emphasis
+   rather than being buried at the end of the description. */
+.modal-note {
+  margin-top: 20px;
+  padding: 14px 18px;
+  text-align: left;
+  background: var(--accent-color-soft);
+  border-left: 3px solid var(--accent-color);
+}
+
+.modal-note__label {
+  display: block;
+  font-family: Marcellus;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  margin-bottom: 7px;
+}
+
+.modal-note__original {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.modal-note__body {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.9;
+}
+
 .portfolio-modal-container {
   background-color: var(--bg-color);
+}
+
+/* Scrolling body for long project write-ups. Bootstrap's `scrollable` prop
+   supplies the max-height and overflow; these rules give it a little more
+   headroom on tall screens and a scrollbar that matches the theme. */
+.modal-dialog-scrollable .modal-content {
+  max-height: calc(100vh - 3.5rem);
+}
+
+.modal-dialog-scrollable .modal-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) transparent;
+}
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar {
+  width: 7px;
+}
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-dialog-scrollable .modal-body::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
 }
 
 .portfolio-modal-container .modal-title {
@@ -185,5 +280,104 @@
 
 .portfolio-modal-container .btn-close {
   filter: invert(1);
+}
+
+/* Bootstrap's default header/footer dividers are a light grey that reads as a
+   seam against the near-black panel. */
+.portfolio-modal-container.modal-header,
+.portfolio-modal-container.modal-footer {
+  border-color: rgba(200, 48, 46, 0.3);
+}
+
+/* === Modal action buttons ===
+   Matches the site's .ac_btn language: hard corners, 2px accent border, and an
+   offset shadow that lifts on hover. */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+/* Bootstrap spaces footer children with margins, which fights `gap`. */
+.modal-actions > * {
+  margin: 0;
+}
+
+.modal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 22px;
+  font-family: Marcellus;
+  font-size: 0.82rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s ease, color 0.25s ease,
+    border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.modal-btn svg {
+  font-size: 0.72em;
+}
+
+.modal-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Primary: starts filled, hover inverts to outline — same as the home CTA. */
+.modal-btn--primary {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.modal-btn--primary:hover {
+  background: transparent;
+  color: var(--accent-color);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--accent-color-soft);
+}
+
+/* Ghost: recessive, so it never competes with the primary action. */
+.modal-btn--ghost {
+  background: transparent;
+  border-color: rgba(216, 210, 194, 0.22);
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.modal-btn--ghost:hover {
+  opacity: 1;
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+@media (max-width: 480px) {
+  .modal-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .modal-btn {
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal-btn {
+    transition: none;
+  }
+
+  .modal-btn--primary:hover {
+    transform: none;
+  }
 }
 

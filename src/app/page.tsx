@@ -4,6 +4,7 @@ import { Portfolio } from "../sections/portfolio";
 import { ContactUs } from "../sections/contact";
 import { Socialicons } from "../components/socialicons";
 import IntroOverlay from "../components/intro-overlay";
+import Chatbot from "../components/chatbot";
 
 const sections = [
   { id: "home", component: <Home /> },
@@ -24,6 +25,7 @@ export default function Page() {
         ))}
       </div>
       <Socialicons />
+      <Chatbot />
     </div>
   );
 }

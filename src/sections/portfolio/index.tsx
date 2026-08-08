@@ -4,7 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import "./style.css";
 import { motion } from "framer-motion";
-import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { Container, Row, Col, Modal } from "react-bootstrap";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import { dataportfolio } from "../../content_option";
 import type { PortfolioItem } from "../../content_option";
 
@@ -97,7 +98,9 @@ export const Portfolio = () => {
         </motion.div>
       </Container>
 
-      <Modal show={show} onHide={handleClose}>
+      {/* `scrollable` caps the dialog height and scrolls the body instead of
+          the page, so long project write-ups stay readable on short screens. */}
+      <Modal show={show} onHide={handleClose} scrollable>
         <Modal.Header closeButton className="portfolio-modal-container">
           <Modal.Title>Project Details</Modal.Title>
         </Modal.Header>
@@ -115,28 +118,58 @@ export const Portfolio = () => {
                 </strong>
               </p>
               <p className="modal-text">{currentProject.description}</p>
+              <ul className="modal-highlights">
+                {currentProject.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
               <p className="modal-text">
                 Role:
                 <br />
                 {currentProject.role}
               </p>
+              {currentProject.portfolioSafe && (
+                <div className="modal-note">
+                  <span className="modal-note__label">
+                    Production work, sanitized for this portfolio
+                  </span>
+                  {currentProject.originalName && (
+                    <p className="modal-note__original">
+                      Known internally as{" "}
+                      <strong>{currentProject.originalName}</strong>
+                    </p>
+                  )}
+                  <p className="modal-note__body">
+                    {currentProject.portfolioSafe}
+                  </p>
+                </div>
+              )}
             </>
           )}
         </Modal.Body>
-        <Modal.Footer className="portfolio-modal-container">
+        {/* Plain elements rather than react-bootstrap Buttons: the default
+            variants ship their own colours, and overriding them costs more
+            specificity than styling from scratch. Close comes first so the
+            primary action sits rightmost. */}
+        <Modal.Footer className="portfolio-modal-container modal-actions">
+          <button
+            type="button"
+            className="modal-btn modal-btn--ghost"
+            onClick={handleClose}
+          >
+            Close
+          </button>
           {currentProject && (
-            <Button
-              variant="secondary"
+            <a
+              className="modal-btn modal-btn--primary"
               href={currentProject.link}
               target="_blank"
               rel="noopener noreferrer"
             >
               View Project
-            </Button>
+              <FaExternalLinkAlt aria-hidden />
+            </a>
           )}
-          <Button variant="danger" onClick={handleClose}>
-            Close
-          </Button>
         </Modal.Footer>
       </Modal>
     </>
